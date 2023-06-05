@@ -22,6 +22,7 @@ class BooksController extends AbstractController
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Books::find()->with('booksAuthors.author'),
+            'sort'=> ['defaultOrder' => ['year' => SORT_DESC]],
         ]);
 
         return $this->render('index', [

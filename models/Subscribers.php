@@ -57,4 +57,10 @@ class Subscribers extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Authors::class, ['id' => 'id_author']);
     }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        \Yii::$app->getSession()->setFlash('success', 'Вы успешно подписались');
+        parent::afterSave($insert, $changedAttributes);
+    }
 }

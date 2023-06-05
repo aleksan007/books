@@ -28,6 +28,7 @@ final class ReportRepository
             ->joinWith('booksAuthors.book')
             ->where(['year'=>$year])
             ->groupBy('authors.id')
+            ->orderBy(['count'=>SORT_DESC])
             ->limit($top);
    }
 
