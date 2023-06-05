@@ -10,10 +10,20 @@ use app\models\Books;
 use app\models\BooksAuthors;
 use app\models\Subscribers;
 
-
+/**
+ * Репозиторий для подписчиков
+ * Class SubscriberRepository
+ * @package app\components\repositories
+ */
 final class SubscriberRepository
 {
-   public function sendSms(Subscribers $subscriber, Books $book, BooksAuthors $author): void
+    /**
+     * Отправить СМС
+     * @param Subscribers $subscriber
+     * @param Books $book
+     * @param BooksAuthors $author
+     */
+    public function sendSms(Subscribers $subscriber, Books $book, BooksAuthors $author): void
    {
         $service = SmsService::getInstance();
 

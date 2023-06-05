@@ -9,6 +9,11 @@ use app\models\Books;
 use app\models\BooksAuthors;
 use yii\helpers\ArrayHelper;
 
+/**
+ * Репозиторий для авторов
+ * Class AuthorRepository
+ * @package app\components\repositories
+ */
 final class AuthorRepository
 {
     /**

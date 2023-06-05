@@ -19,6 +19,9 @@ class Authors extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+
+    public $count;
+
     public static function tableName()
     {
         return 'authors';

@@ -41,6 +41,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             'items' => [
                 ['label' => 'Книги', 'url' => ['/books']],
                 ['label' => 'Авторы', 'url' => ['/authors']],
+                ['label' => 'Отчеты', 'url' => ['/top']],
                 Yii::$app->user->isGuest
                     ? ['label' => 'Login', 'url' => ['/login']]
                     : '<li class="nav-item">'

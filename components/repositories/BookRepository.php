@@ -7,8 +7,12 @@ namespace app\components\repositories;
 use app\models\Books;
 use app\models\BooksAuthors;
 use app\models\Subscribers;
+use yii\helpers\ArrayHelper;
 
-
+/**
+ * Class BookRepository
+ * @package app\components\repositories
+ */
 final class BookRepository
 {
    public function sendToSubscribersSms(Books $book)
@@ -25,6 +29,16 @@ final class BookRepository
                 $repository->sendSms($subscriber, $book, $author);
            }
        }
+   }
+
+    /**
+     * Возвращает список лет издания книг
+     * @return array
+     */
+    public function getYearFromBooks(): array
+   {
+       $books = Books::find()->distinct()->orderBy(['year' => SORT_DESC])->all();
+       return ArrayHelper::map($books, 'year','year');
    }
 
 }

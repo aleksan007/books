@@ -57,6 +57,7 @@ $config = [
                 '/' => '/books/index',
                 '/login' => 'site/login',
                 '/logout' => 'site/logout',
+                '/top' => 'reports/top',
             ],
         ],
     ],

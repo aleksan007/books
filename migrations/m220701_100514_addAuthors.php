@@ -3,7 +3,7 @@
 use yii\db\Migration;
 
 /**
- * Книги авторов
+ * Добавление авторов
  */
 class m220701_100514_addAuthors extends Migration
 {
