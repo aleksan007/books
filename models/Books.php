@@ -5,6 +5,7 @@ namespace app\models;
 use app\components\repositories\AuthorRepository;
 use app\components\repositories\BookRepository;
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "books".
@@ -87,5 +88,12 @@ class Books extends \yii\db\ActiveRecord
         }
 
         parent::afterSave($insert, $changedAttributes);
+    }
+
+    public function afterFind()
+    {
+        $authors = $this->booksAuthors;
+        $this->idAuthor = ArrayHelper::getColumn($authors,'id_author');
+        parent::afterFind();
     }
 }
